@@ -119,4 +119,3 @@ var wel = "%c\n[Purify] Scripts initialized..\n[Purify] Running cheat code\n[Pur
         }
     });
 }); })();
-export {};
