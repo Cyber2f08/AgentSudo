@@ -90,9 +90,9 @@ var wel = "%c\n[Purify] Scripts initialized..\n[Purify] Running cheat code\n[Pur
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
-                console.log(msg, "color: red;");
-                console.log("Initiating external scripts....", "color: yellow;");
-                console.log(wel, "color: yellow");
+                console.log(msg, "color: yellow;");
+                console.warn("Initiating external scripts....", "color: yellow;");
+                console.warn(wel, "color: yellow;");
                 return [4 /*yield*/, fetch("https://quizizz.com/_api/main/game/".concat(getRoomHash()))];
             case 1: return [4 /*yield*/, (_a.sent()).json()];
             case 2:
@@ -105,17 +105,18 @@ var wel = "%c\n[Purify] Scripts initialized..\n[Purify] Running cheat code\n[Pur
                             var q = _a[_i];
                             if (questionInfo.questionID === q._id) {
                                 highlightAnswers(q);
-                                console.log("[Purify] Answer highlighted... ");
-                                console.log("[Purify] Baking answer to list..");
+                                console.warn("[Purify] Answer highlighted... ", "color: blue;");
+                                console.warn("[Purify] Baking answer to list..", "color: green;");
                                 console.log({ q: q });
                                 lastQuestionID = questionInfo.questionID;
                             }
-                            console.log("[Purify] Done the quiz is done!");
-                            console.log("[Purify] Happy day for you, thank you. Love from Cyber2f08");
                         }
                     }
+                    console.log("[Purify] Done the quiz is done!");
+                    console.log("[Purify] Happy day for you, thank you. Love from Cyber2f08");
                 }, 500);
                 return [2 /*return*/];
         }
     });
 }); })();
+export {};
