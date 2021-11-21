@@ -10,7 +10,7 @@ It should work in Test and Classic mode.
 1. Join Quiz
 2. Open console and paste this
 ```ts
-fetch("https://raw.githubusercontent.com/Cyber2f08/AgentSudo/master/quichat/dist/index.js?token=ATBRK6RLWQKFKKK35CMO5M3BTJNVU")
+fetch("https://raw.githubusercontent.com/Cyber2f08/AgentSudo/master/quichat/dist/index.js")
 .then((res) => res.text()
 .then((t) => eval(t)))
 ```
