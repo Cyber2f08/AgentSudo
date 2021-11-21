@@ -117,4 +117,3 @@ var wel = "%c\n        [Purify] Scripts initialized..\n        [Purify] Running 
         }
     });
 }); })();
-export {};
