@@ -92,15 +92,14 @@ const wel = `%c
       for (const q of quiz.data.questions) {
         if (questionInfo.questionID === q._id) {
           highlightAnswers(q);
-          console.warn("[Purify] Answer highlighted... ", "color: blue;")
-          console.warn("[Purify] Baking answer to list..", "color: green;")
+          console.warn("[Purify] Answer highlighted... ")
+          console.warn("[Purify] Baking answer to list..")
           console.log({q})
           lastQuestionID = questionInfo.questionID;
         }
       }
     }
-    console.log("[Purify] Done the quiz is done!")
-    console.log("[Purify] Happy day for you, thank you. Love from Cyber2f08")
   }, 500)
-
+  console.log("[Purify] Done the quiz is done!")
+  console.log("[Purify] Happy day for you, thank you. Love from Cyber2f08")
 })();
