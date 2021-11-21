@@ -100,6 +100,4 @@ const wel = `%c
       }
     }
   }, 500)
-  console.log("[Purify] Done the quiz is done!")
-  console.log("[Purify] Happy day for you, thank you. Love from Cyber2f08")
 })();
