@@ -84,7 +84,7 @@ var getRoomHash = function () {
     return vue.$store._vm._data.$$state.game.data.roomHash;
 };
 var msg = "%c \n        Script is been created is on production...\n        Created by @Cyber2f08\n      ";
-var wel = "%c\n        [Purify] Scripts initialized..\n        [Purify] Running cheat code\n        [Purify] Happy hacking\n        [Purify] Make with love from Cyber2f08\n      ";
+var wel = "%c\n[Purify] Scripts initialized..\n[Purify] Running cheat code\n[Purify] Happy hacking\n[Purify] Make with love from Cyber2f08\n      ";
 (function () { return __awaiter(void 0, void 0, void 0, function () {
     var quiz, lastQuestionID;
     return __generator(this, function (_a) {
@@ -106,10 +106,12 @@ var wel = "%c\n        [Purify] Scripts initialized..\n        [Purify] Running 
                             if (questionInfo.questionID === q._id) {
                                 highlightAnswers(q);
                                 console.log("[Purify] Answer highlighted... ");
-                                console.log("[Purify] Initiating bakery of script..");
+                                console.log("[Purify] Baking answer to list..");
                                 console.log({ q: q });
                                 lastQuestionID = questionInfo.questionID;
                             }
+                            console.log("[Purify] Done the quiz is done!");
+                            console.log("[Purify] Happy day for you, thank you. Love from Cyber2f08");
                         }
                     }
                 }, 500);

@@ -71,10 +71,10 @@ const msg = `%c
         Created by @Cyber2f08
       `;
 const wel = `%c
-        [Purify] Scripts initialized..
-        [Purify] Running cheat code
-        [Purify] Happy hacking
-        [Purify] Make with love from Cyber2f08
+[Purify] Scripts initialized..
+[Purify] Running cheat code
+[Purify] Happy hacking
+[Purify] Make with love from Cyber2f08
       `;
 
 
@@ -94,10 +94,12 @@ const wel = `%c
         if (questionInfo.questionID === q._id) {
           highlightAnswers(q);
           console.log("[Purify] Answer highlighted... ")
-          console.log("[Purify] Initiating bakery of script..")
+          console.log("[Purify] Baking answer to list..")
           console.log({q})
           lastQuestionID = questionInfo.questionID;
         }
+      console.log("[Purify] Done the quiz is done!")
+      console.log("[Purify] Happy day for you, thank you. Love from Cyber2f08")
       }
     }
   }, 500)
