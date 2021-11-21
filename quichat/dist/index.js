@@ -113,10 +113,7 @@ var wel = "%c\n[Purify] Scripts initialized..\n[Purify] Running cheat code\n[Pur
                         }
                     }
                 }, 500);
-                console.log("[Purify] Done the quiz is done!");
-                console.log("[Purify] Happy day for you, thank you. Love from Cyber2f08");
                 return [2 /*return*/];
         }
     });
 }); })();
-export {};
