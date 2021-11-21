@@ -1,0 +1,11 @@
+{
+    "PACKAGE_": "CACleaner",
+    "VERSION": "v1",
+    "DISABLE": "false",
+    "AUTHOR":{
+        "NAME": "Cyber2f08",
+        "EMAIL": "cyber.2f08@gmail.com"
+    },
+    "LOG": "Halo aku pembersih cache simple, :). Tunggu ya :0",
+    "CMD": "start pycache.bat"
+}

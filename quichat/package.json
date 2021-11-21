@@ -1,0 +1,21 @@
+{
+  "name": "quichat",
+  "version": "1.0.0",
+  "description": "Quizizz Cheat by Cyber2f08",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/Cyber2f08"
+  },
+  "keywords": [
+    "Quizizz"
+  ],
+  "author": "Cyber2f08",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.5.2"
+  }
+}

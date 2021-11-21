@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <title>{% block title %}Login{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <section class="container-fluid bg">
+      <section class="row justify-content-center col-sm ">
+        <section class="col-12 col-sm-6 col-md-3">
+          <form class="form-container" action="{{ url_for('login') }}" method="post">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label text-light">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" value="{{ request.form.email }}">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label text-light">Key</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" name="key" value="{{ request.form.key }}">
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label text-light" for="exampleCheck1">Notify the leader</label>
+            </div>
+            <button type="submit" class="btn btn-primary col-12 text-light">Submit</button>
+          </form>
+        </section>
+      </section>
+    </section>
+{% endblock content %}
+  
+  {% block scripts %}
+  <script src="{{ url_for('static', filename='js/warn.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/felic.js') }}"></script>
+  {% endblock scripts %}

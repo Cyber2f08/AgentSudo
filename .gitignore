@@ -1,0 +1,20 @@
+# Pytest cache
+.pytest_cache/
+
+# Module cache
+__pycache__/
+
+# Vim Some
+~/
+
+# File
+server.py~
+utils.py~
+.server.py.un~
+.utils.py.un~
+.gitignore~
+..gitignore.un~
+log.txt
+node_modules
+.vscode
+ngrok.exe

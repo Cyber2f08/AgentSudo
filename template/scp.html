@@ -1,0 +1,12 @@
+<html>
+   <head>
+      <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+   </head>
+   <body>
+      <form action = "{{ url_for('u_Service') }}" method = "POST" 
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form>
+   </body>
+</html>

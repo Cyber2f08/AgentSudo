@@ -1,0 +1,33 @@
+{
+  "name": "client",
+  "version": "4.3.21",
+  "description": "Server side nodejs for flask",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cyber2f08/Koop.git"
+  },
+  "keywords": [
+    "Koop"
+  ],
+  "author": {
+    "name": "Cyber2f08",
+    "email": "cyber.2f08@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cyber2f08/Koop/issues"
+  },
+  "homepage": "https://github.com/Cyber2f08/Koop#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.15",
+    "request": "^2.88.2"
+  },
+  "scripts": {
+    "start": "node app.js"
+  }
+}
