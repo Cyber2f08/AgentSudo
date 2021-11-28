@@ -910,10 +910,10 @@ if __name__ == "__main__":
     >_______________________________________________
     	'''
         print(Align.center(EM_BACK))
-        print("\n")
-        print(Align.center("[UPDATES]\n"))
-        console = Console()
-        console.print(Align.center(table))
+        #print("\n")
+        #print(Align.center("[UPDATES]\n"))
+        #console = Console()
+        #console.print(Align.center(table))
         print("\n\n\n")
     if LCL_CO["debug"] == True:
         os.system("title DEBUG MODE ACTIVE")
