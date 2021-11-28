@@ -30,22 +30,24 @@ f = open("subdomains.txt")
 content = f.read()
 subdomains = content.splitlines()
 sudomain = []
-print("Searching subdomains...")
-print("-" * 50)
-for subdomain in subdomains:
-    url = f"https://{subdomain}.{domain}"
-    try:
-        requests.get(url)
-    except requests.ConnectionError:
-        pass
-    else:
-        print("Discovered subdomain:", url)
-        sudomain.append(url)
+# print("Searching subdomains...")
+# print("-" * 50)
+# for subdomain in subdomains:
+#    url = f"https://{subdomain}.{domain}"
+#    try:
+#        requests.get(url, timeout=1)
+#    except requests.ConnectionError:
+#        pass
+#    except requests.ConnectTimeout:
+#        pass
+#    else:
+#       print("Discovered subdomain:", url)
+#        sudomain.append(url)
 
 # save the discovered subdomains into a file
-with open("opendo.txt", "w") as f:
-    for subdomain in sudomain:
-        print(subdomain, file=f)
+#with open("opendo.txt", "w") as f:
+#    for subdomain in sudomain:
+#        print(subdomain, file=f)
 
 print("-" * 50)
 #Connect to remote server
