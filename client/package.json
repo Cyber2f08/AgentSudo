@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cyber2f08/Koop.git"
+    "url": "git+https://github.com/Cyber2f08/AgentSudo.git"
   },
   "keywords": [
-    "Koop"
+    "AgentSudo"
   ],
   "author": {
     "name": "Cyber2f08",
@@ -19,15 +19,12 @@
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Cyber2f08/Koop/issues"
+    "url": "https://github.com/Cyber2f08/AgentSudo/issues"
   },
-  "homepage": "https://github.com/Cyber2f08/Koop#readme",
+  "homepage": "https://github.com/Cyber2f08/AgentSudo#readme",
   "dependencies": {
     "express": "^4.17.1",
     "nodemon": "^2.0.15",
     "request": "^2.88.2"
-  },
-  "scripts": {
-    "start": "node app.js"
   }
 }
